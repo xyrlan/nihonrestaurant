@@ -5,20 +5,23 @@ import { Toaster } from "@/components/ui/sonner"
 import { useEffect, useState } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const [prevScrollPos, setPrevScrollPos] = useState<number>(window.pageYOffset);
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
   const [visible, setVisible] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, [prevScrollPos, visible]);
+  
   return (
     <div className="">
       <Navbar visible={visible} />
