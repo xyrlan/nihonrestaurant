@@ -25,7 +25,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
     }
   }, [prevScrollPos, visible]);
 
-  console.log(isNavbarAtTop)
   return (
     <div className="">
       <Navbar visible={visible} isNavbarAtTop={isNavbarAtTop} />

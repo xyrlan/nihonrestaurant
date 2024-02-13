@@ -3,7 +3,7 @@ import React from 'react'
 
 const SobreSection = () => {
   return (
-    <section className='w-full bg-[#292824] py-20'>
+    <section id='SOBRE' className='w-full bg-[#292824] py-20'>
       <div className='container text-white sm:flex sm:gap-20 space-y-20'>
         <div className='sm:w-1/2 '>
           <h2 className='text-3xl mb-8 text-[#b93531] font-semibold'>

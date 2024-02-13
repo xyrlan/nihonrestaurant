@@ -1,24 +1,29 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = ({visible, isNavbarAtTop}: any) => {
-  const [isOpen, setIsOpen] = useState(false); 
+const Navbar = ({ visible, isNavbarAtTop }: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedButton, setSelectedButton] = useState("INICIO");
+  const router = useRouter()
+  const observer = useRef<IntersectionObserver | null>(null);
+
   const navigation = [
-    { name: 'SOBRE', href: '#', current: true },
-    { name: 'CARDÁPIOS', href: '#', current: false },
-    { name: 'RESERVE', href: '#', current: false },
-    { name: 'CURSOS', href: '#', current: false },
-    { name: 'ENTRE EM CONTATO', href: '#', current: false },
+    { name: 'INICIO', href: '#' },
+    { name: 'SOBRE', href: '#' },
+    { name: 'CURSOS', href: '#' },
+    // { name: 'CARDÁPIOS', href: '/cardapios' },
+    { name: 'ENTRE EM CONTATO', href: '#' },
+    { name: 'RESERVE', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
   ]
 
   return (
@@ -49,17 +54,22 @@ const Navbar = ({visible, isNavbarAtTop}: any) => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <Link
+                      <button
                         key={item.name}
-                        href={item.href}
+                        onClick={() => {
+                          document.getElementById(`${item.name}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                          if (item.name === 'RESERVE') {
+                            router.push(item.href)
+                          }
+                        }}
                         className={classNames(
-                          item.current ? ' text-white border-b-2 border-white' : 'text-gray-300 hover:text-white',
+                          'text-gray-200 hover:brightness-110 hover:text-white',
                           'px-3 py-2 font-medium text-lg duration-200'
                         )}
-                        aria-current={item.current ? 'page' : undefined}
+
                       >
                         {item.name}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -72,13 +82,18 @@ const Navbar = ({visible, isNavbarAtTop}: any) => {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
+                  onClick={() => {
+                    document.getElementById(`${item.name}`)?.scrollIntoView({ behavior: 'smooth' })
+                    if (item.name === 'RESERVE') {
+                      router.push(item.href)
+                    }
+                    setIsOpen(false)
+                  }}
                   className={classNames(
-                    item.current ? 'bg-[#1d1d19] text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    'text-gray-200 hover:bg-gray-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+
                 >
                   {item.name}
                 </Disclosure.Button>

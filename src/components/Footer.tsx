@@ -65,19 +65,23 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Sobre </Link>
+                <button onClick={() => {
+                  document.getElementById(`SOBRE`)?.scrollIntoView({ behavior: 'smooth' , block: 'center'})
+                }} className="text-gray-200 transition hover:opacity-75"> Sobre </button>
               </li>
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Cardápios </Link>
+                {/* <Link href="#" className="text-gray-200 transition hover:opacity-75"> Cardápios </Link> */}
               </li>
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Faça sua reserva </Link>
+                <Link href="https://api.whatsapp.com/send/?phone=55991362855" target='_blank' className="text-gray-200 transition hover:opacity-75"> Faça sua reserva </Link>
               </li>
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Fale conosco </Link>
+                <button onClick={() => {
+                  document.getElementById(`ENTRE EM CONTATO`)?.scrollIntoView({ behavior: 'smooth' , block: 'center'})
+                }}  className="text-gray-200 transition hover:opacity-75"> Fale conosco </button>
               </li>
 
             </ul>
@@ -89,11 +93,11 @@ const Footer = () => {
             <ul className="mt-6 space-y-4 text-sm">
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> AquidaClass </Link>
+                <Link href="https://www.instagram.com/aquidaclass_marketing/" target='_blank' className="text-gray-200 transition hover:opacity-75"> AquidaClass </Link>
               </li>
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Finos Paladares </Link>
+                <Link href="https://www.instagram.com/finos_paladares_restaurante" target='_blank' className="text-gray-200 transition hover:opacity-75"> Finos Paladares </Link>
               </li>
 
               <li>

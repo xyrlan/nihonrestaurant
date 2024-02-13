@@ -80,3 +80,7 @@
 .fontnihon {
   font-family: "Jing Jing W01";
 }
+
+::-webkit-scrollbar {
+  scroll-behavior: smooth;
+}

@@ -10,9 +10,9 @@ export default function Home() {
     <main >
       <HeroSection />
       <SobreSection />
-      <FaleConoscoSection />
-      <ParceirosSection />
       <CursoSection />
+      <ParceirosSection />
+      <FaleConoscoSection />
     </main>
   );
 }
