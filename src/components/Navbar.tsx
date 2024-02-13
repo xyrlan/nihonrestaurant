@@ -11,17 +11,18 @@ function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = ({visible}: any) => {
+const Navbar = ({visible, isNavbarAtTop}: any) => {
   const [isOpen, setIsOpen] = useState(false); 
   const navigation = [
     { name: 'SOBRE', href: '#', current: true },
     { name: 'CARDÁPIOS', href: '#', current: false },
     { name: 'RESERVE', href: '#', current: false },
-    { name: 'ENTRE EM CONTATO', href: '#entreemcontato', current: false },
+    { name: 'CURSOS', href: '#', current: false },
+    { name: 'ENTRE EM CONTATO', href: '#', current: false },
   ]
 
   return (
-    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 bg-opacity-40 py-4 hover:bg-opacity-100 duration-200 transition-all ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-28'}`}>
+    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black py-4 duration-200 transition-all ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-28'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-20' : 'bg-opacity-100'}`}>
       {({ open }) => (
         <>
           <div className="mx-auto px-2 container">
