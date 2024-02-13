@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { toast } from "sonner"
 
 const FaleConoscoSection = () => {
   const [name, setName] = useState('')
@@ -11,6 +13,27 @@ const FaleConoscoSection = () => {
 
   function sendEmail(e: any) {
     e.preventDefault()
+    if (name === '' || message === '' || phone === '' || email === '') {
+      console.log('fail')
+      return
+    }
+    const templateParams = {
+      from_name: name,
+      message: message,
+      email: email,
+      phone: phone
+    }
+    emailjs.send("service_528j4w8", "template_fwxhga2", templateParams, "OR9NOXgMcSID8jV2N")
+      .then((response) => {
+        setName('')
+        setPhone('')
+        setEmail('')
+        setMessage('')
+        toast("Email enviado com sucesso!")
+      }, (err) => {
+        console.log(err)
+        toast("Algo deu errado, nao conseguimos enviar o email")
+      })
   }
 
   return (
@@ -34,13 +57,14 @@ const FaleConoscoSection = () => {
           </div>
 
           <div className="rounded-lg sm:p-8 shadow-lg lg:col-span-3 lg:p-12 text-gray-100">
-            <form action={sendEmail} className="space-y-4 ">
+            <form onSubmit={sendEmail} className="space-y-4 ">
               <div>
                 <label className="sr-only" htmlFor="name">Name</label>
                 <input
                   className="w-full bg-[#292824] border-b border-gray-200 p-3 text-sm ring-offset-0 ring-0 outline-none select-none focus:border-[#b93531]"
                   placeholder="Nome"
                   onChange={(e) => setName(e.target.value)}
+                  value={name}
                   type="text"
                   id="name"
                   required
@@ -54,6 +78,7 @@ const FaleConoscoSection = () => {
                     className="w-full bg-[#292824] border-b border-gray-200 p-3 text-sm ring-offset-0 ring-0 outline-none select-none focus:border-[#b93531]"
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                     type="email"
                     id="email"
                     required
@@ -66,6 +91,7 @@ const FaleConoscoSection = () => {
                     className="w-full bg-[#292824] border-b border-gray-200 p-3 text-sm ring-offset-0 ring-0 outline-none select-none focus:border-[#b93531]"
                     placeholder="Telefone/Celular"
                     onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
                     type="tel"
                     id="phone"
                     required
@@ -80,6 +106,7 @@ const FaleConoscoSection = () => {
                   className="w-full bg-[#292824] border rounded border-gray-200 p-3 text-sm ring-offset-0 ring-0 outline-none select-none focus:border-[#b93531]"
                   placeholder="Mensagem"
                   onChange={(e) => setMessage(e.target.value)}
+                  value={message}
                   rows={8}
                   id="message"
                   required

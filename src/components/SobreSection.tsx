@@ -13,7 +13,7 @@ const SobreSection = () => {
           <p className='sm:text-lg mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, enim distinctio! Error voluptate labore, facilis voluptates laborum aliquam. Ut sit atque veniam laudantium laboriosam nihil magni necessitatibus vitae consequatur earum?</p>
           <p className='sm:text-lg mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, enim distinctio! Error voluptate labore, facilis voluptates laborum aliquam. Ut sit atque veniam laudantium laboriosam nihil magni necessitatibus vitae consequatur earum?</p>
         </div>
-        <Image src={'/nihonprato.jpg'} width={700} height={700} alt='fotopratonihon' className='sm:w-[40%] h-auto object-contain' />
+        <Image src={'/nihonprato.jpg'} width={500} height={333} alt='fotopratonihon' className='sm:w-[40%] h-auto object-contain' />
       </div>
     </section>
   )
