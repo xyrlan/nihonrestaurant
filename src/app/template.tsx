@@ -26,7 +26,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   }, [prevScrollPos, visible]);
 
   return (
-    <div className="">
+    <div>
       <Navbar visible={visible} isNavbarAtTop={isNavbarAtTop} />
       {children}
       <Footer />

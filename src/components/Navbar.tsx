@@ -1,11 +1,12 @@
 'use client'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import React, { useRef, useState } from 'react'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import Banner from './Banner'
+import { motion } from "framer-motion"
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
@@ -27,10 +28,12 @@ const Navbar = ({ visible, isNavbarAtTop }: any) => {
   ]
 
   return (
-    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black py-4 duration-200 transition-all ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-28'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-20' : 'bg-opacity-100'}`}>
+
+    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black duration-200 transition-all ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-40'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-40' : 'bg-opacity-100'}`}>
       {({ open }) => (
-        <>
-          <div className="mx-auto px-2 container">
+        <motion.div initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }}>
+          <Banner />
+          <div className="mx-auto px-2 py-4 container">
             <div className="relative flex items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -100,7 +103,7 @@ const Navbar = ({ visible, isNavbarAtTop }: any) => {
               ))}
             </div>
           </Disclosure.Panel>
-        </>
+        </motion.div>
       )}
     </Disclosure>
   )

@@ -4,6 +4,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { toast } from "sonner"
+import { motion } from "framer-motion"
+
 
 const FaleConoscoSection = () => {
   const [name, setName] = useState('')
@@ -37,8 +39,8 @@ const FaleConoscoSection = () => {
   }
 
   return (
-    <section id='ENTRE EM CONTATO' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/faleconoscohero.jpg')]">
-      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824]">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='ENTRE EM CONTATO' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/faleconoscohero.jpg')]">
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824]">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12 text-gray-100">
             <h2 className='text-[#b93531] font-semibold text-3xl mb-8'>Fale Conosco</h2>
@@ -124,8 +126,8 @@ const FaleConoscoSection = () => {
             </form>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
 

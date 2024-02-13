@@ -134,6 +134,7 @@ const Footer = () => {
         </div>
 
         <p className="text-xs text-gray-500">&copy; 2010. Nihon. Todos os direitos reservados.</p>
+        <Link href={'https://xyrlan.vercel.app/'} ><p className='text-xs text-gray-500 mt-4'>Desenvolvido por <span className='text-[#b93531] underline'>xyrlan</span></p></Link>
       </div>
     </footer>
   )
