@@ -1,4 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/fe4dad761a2352ca02d2acd8163afb10?family=Jing+Jing+W01);
+@import url(https://fonts.googleapis.com/css2?family=Kristi&display=swap);
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -104,4 +105,11 @@
 .parallax span {
   display: block;
   margin-right: 30px;
+}
+
+
+.kristi-regular {
+  font-family: "Kristi", cursive;
+  font-weight: 400;
+  font-style: normal;
 }

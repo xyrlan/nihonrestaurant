@@ -1,11 +1,11 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Banner from './Banner'
 import { motion } from "framer-motion"
 
@@ -64,17 +64,40 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
+export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
+
+
   const [isOpen, setIsOpen] = React.useState(false)
   const router = useRouter()
+  const pathname = usePathname()
+
+
   const navigation = [
-    { name: 'Inicio', href: '#' },
-    { name: 'Sobre', href: '#' },
-    { name: 'Cursos', href: '#' },
-    { name: 'Fale Conosco', href: '#' },
-    // { name: 'CARDÁPIOS', href: '/cardapios' },
+    {
+      name: 'Inicio', href: 'inicio', subnav: [
+        { name: 'Sobre', href: 'sobre' },
+        { name: 'Avaliações', href: 'avaliacoes' },
+        { name: 'Nossos Parceiros', href: 'nossos-parceiros' },
+        { name: 'Fale Conosco', href: 'fale-conosco' },
+      ],
+    },
+    { name: 'Cursos', href: '/cursos' },
     { name: 'Reserve', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
   ]
+
+
+  function handlePath(item: any) {
+    if (pathname === '/') {
+      const element = document.getElementById(item.href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto' });
+      }
+    } else {
+      // Se não estamos na mesma rota, redirecionar com o ID da seção
+      router.push(`/?section=${item.name.toLowerCase().replace(' ', '-')}`);
+    }
+  }
+
   return (
     <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black duration-200 transition-all z-50 ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-40'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-40 hover:bg-opacity-100' : 'bg-opacity-100'}`}>
       {({ open }) => (
@@ -113,7 +136,7 @@ export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
                                 <button
                                   className="flex h-full w-full select-none flex-col justify-end items-center rounded-md bg-gradient-to-b from-muted-foreground/50 to-muted-foreground p-6 no-underline outline-none focus:shadow-md"
                                   onClick={() => {
-                                    document.getElementById(`Inicio`)?.scrollIntoView({ behavior: 'smooth' })
+                                    router.push('/')
                                   }}
                                 >
                                   <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
@@ -124,16 +147,16 @@ export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
                                 </button>
                               </NavigationMenuLink>
                             </li>
-                            <ListItem title="Sobre">
+                            <ListItem title="Sobre" qparams={'sobre'} handlePath={handlePath}>
                               Conheça um pouco da historia Nihon.
                             </ListItem>
-                            <ListItem title="Cursos">
-                              Conheça o curso do no Chef.
+                            <ListItem title="Avaliações" qparams={'avaliacoes'} handlePath={handlePath}>
+                              Veja as avaliações de nosso clientes.
                             </ListItem>
-                            <ListItem title="Nossos Parceiros">
+                            <ListItem title="Nossos Parceiros" qparams={'nossos-parceiros'} handlePath={handlePath}>
                               Conheça os parceiros Nihon
                             </ListItem>
-                            <ListItem title="Fale Conosco">
+                            <ListItem title="Fale Conosco" qparams={'fale-conosco'} handlePath={handlePath}>
                               Envie dúvidas, reclamações, sugestões e outros
                             </ListItem>
                           </ul>
@@ -155,11 +178,18 @@ export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
                         </NavigationMenuContent>
                       </NavigationMenuItem> */}
                       <NavigationMenuItem className=''>
-                          <Link href="https://api.whatsapp.com/send/?phone=55991362855" legacyBehavior passHref>
-                            <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
-                              Reserve
-                            </NavigationMenuLink>
-                          </Link>
+                        <Link href="/cursos" legacyBehavior passHref>
+                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
+                            Cursos
+                          </NavigationMenuLink>
+                        </Link>
+                      </NavigationMenuItem>
+                      <NavigationMenuItem className=''>
+                        <Link href="https://api.whatsapp.com/send/?phone=55991362855" legacyBehavior passHref>
+                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
+                            Reserve
+                          </NavigationMenuLink>
+                        </Link>
                       </NavigationMenuItem>
                     </NavigationMenuList>
                   </NavigationMenu>
@@ -171,23 +201,42 @@ export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
           <Disclosure.Panel className="sm:hidden">
             <div className={`space-y-1 px-2 pb-3 pt-2`}>
               {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  onClick={() => {
-                    document.getElementById(`${item.name}`)?.scrollIntoView({ behavior: 'smooth' })
-                    if (item.name === 'RESERVE') {
-                      router.push(item.href)
-                    }
-                    setIsOpen(false)
-                  }}
-                  className={classNames(
-                    'text-gray-200 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
+                <div key={item.name}>
+                  <Disclosure.Button
+                    onClick={() => {
+                      if (item.name !== 'Inicio') {
+                        router.push(item.href);
+                      } else {
+                        handlePath(item)
+                      }
+                      setIsOpen(false);
+                    }}
+                    className={classNames(
+                      'text-gray-200 hover:bg-gray-700 hover:text-white',
+                      'block rounded-md px-3 py-2 text-base font-medium'
+                    )}
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                  {item.subnav && (
+                    <Disclosure.Panel>
+                      <div className="px-4 py-2 space-y-1">
+                        {item.subnav.map((subItem) => (
+                          <Disclosure.Button
+                            key={subItem.name}
+                            onClick={() => {
+                              handlePath(subItem)
+                              setIsOpen(false);
+                            }}
+                            className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-white rounded-md"
+                          >
+                            {subItem.name}
+                          </Disclosure.Button>
+                        ))}
+                      </div>
+                    </Disclosure.Panel>
                   )}
-
-                >
-                  {item.name}
-                </Disclosure.Button>
+                </div>
               ))}
             </div>
           </Disclosure.Panel>
@@ -199,16 +248,19 @@ export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
 }
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"button">,
-  React.ComponentPropsWithoutRef<"button">
->(({ className, title, children, ...props }, ref) => {
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button"> & { title: string; qparams: string, handlePath: any }
+>(({ className, title, children, qparams, handlePath, ...props }, ref) => {
+
+const item = {name: title, href: qparams}
+
   return (
     <li>
       <NavigationMenuLink asChild>
         <button
           ref={ref}
           onClick={() => {
-            document.getElementById(`${title}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+           handlePath(item)
           }}
           className={cn(
             "block w-full select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",

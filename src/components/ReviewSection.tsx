@@ -7,15 +7,15 @@ import Link from 'next/link'
 
 const ReviewSection = () => {
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='Cursos' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursos.jpg')]">
-      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='avaliacoes' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursos.jpg')]">
+      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full ">
 
 
-        <h2 className="text-[#b93531] text-4xl font-bold tracking-tight sm:text-5xl mb-8">
+        <h2 className="text-[#b93531] text-3xl font-bold tracking-tight sm:text-5xl mb-8 max-sm:text-center">
           Leia as opiniões de confiança dos nossos clientes
         </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
+        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 ">
           <blockquote className="rounded-lg bg-accent-foreground p-6 shadow-sm sm:p-8">
             <div className="flex items-center gap-4">
               <img
