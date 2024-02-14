@@ -82,6 +82,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
       ],
     },
     { name: 'Cursos', href: '/cursos' },
+    { name: 'Nossa Historia', href: '/nossahistoria' },
     { name: 'Reserve', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
   ]
 
@@ -177,6 +178,13 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem> */}
+                      <NavigationMenuItem className=''>
+                        <Link href="/nossahistoria" legacyBehavior passHref>
+                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
+                            Nossa Historia
+                          </NavigationMenuLink>
+                        </Link>
+                      </NavigationMenuItem>
                       <NavigationMenuItem className=''>
                         <Link href="/cursos" legacyBehavior passHref>
                           <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>

@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={josepin.className}>{children}</body>
+      <body className={`${josepin.className} bg-[#292824]`}>{children}</body>
     </html>
   );
 }
