@@ -1,8 +1,25 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+
 import React from 'react'
 
 const Footer = () => {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  function handlePath(item: any) {
+    if (pathname === '/') {
+      const element = document.getElementById(item);
+      if (element) {
+        element.scrollIntoView({ behavior: 'instant' });
+      }
+    } else {
+      // Se não estamos na mesma rota, redirecionar com o ID da seção
+      router.push(`/?section=${item}`);
+    }
+  }
   return (
     <footer className="bg-[#292824] border-t border-black/50">
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
@@ -66,8 +83,23 @@ const Footer = () => {
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <button onClick={() => {
-                  document.getElementById(`Sobre`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  router.push('/')
+                }} className="text-gray-200 transition hover:opacity-75"> Inicio </button>
+              </li>
+              <li>
+                <button onClick={() => {
+                  handlePath('sobre')
                 }} className="text-gray-200 transition hover:opacity-75"> Sobre </button>
+              </li>
+              <li>
+                <button onClick={() => {
+                  handlePath('avaliacoes')
+                }} className="text-gray-200 transition hover:opacity-75"> Avaliações </button>
+              </li>
+              <li>
+                <button onClick={() => {
+                  handlePath('nossas-marcas')
+                }} className="text-gray-200 transition hover:opacity-75"> Nossas marcas </button>
               </li>
 
               <li>
@@ -75,20 +107,20 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link href="https://api.whatsapp.com/send/?phone=55991362855" target='_blank' className="text-gray-200 transition hover:opacity-75"> Faça sua reserva </Link>
-              </li>
-
-              <li>
                 <button onClick={() => {
-                  document.getElementById(`Fale Conosco`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  handlePath('fale-conosco')
                 }} className="text-gray-200 transition hover:opacity-75"> Fale conosco </button>
               </li>
+              <li>
+                <Link href="/nossahistoria" className="text-gray-200 transition hover:opacity-75"> Nossa História </Link>
+              </li>
+
 
             </ul>
           </div>
 
           <div>
-            <p className="font-medium text-[#b93531]">Parceiros</p>
+            <p className="font-medium text-[#b93531]">Nossas Marcas</p>
 
             <ul className="mt-6 space-y-4 text-sm">
 
@@ -119,6 +151,10 @@ const Footer = () => {
                 <Link href="https://www.facebook.com/NihonRestauranteJaponesAquidauana/?locale=pt_BR"
                   className="text-gray-200 transition hover:opacity-75"> Facebook </Link>
               </li>
+
+              <li>
+                <Link href="/fotos" target='_blank' className="text-gray-200 transition hover:opacity-75"> Feed </Link>
+              </li>
             </ul>
           </div>
 
@@ -127,7 +163,13 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <Link href={'https://instadelivery.com.br/nihonsushi'} target='_blank' className="text-gray-200 transition hover:opacity-75"> Clique aqui </Link>
+                <Link href={'https://instadelivery.com.br/nihonsushi'} target='_blank' className="text-gray-200 transition hover:opacity-75"> Instadelivery </Link>
+              </li>
+              <li>
+                <Link href={'https://www.ifood.com.br/delivery/aquidauana-ms/nihon-sushi-bar-e-restaurante-japones-guanandy/7c088da1-b638-489f-93a0-b7b756121dfe'} target='_blank' className="text-gray-200 transition hover:opacity-75"> Ifood </Link>
+              </li>
+              <li>
+                <Link href="https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva" target='_blank' className="text-gray-200 transition hover:opacity-75"> Faça sua reserva </Link>
               </li>
             </ul>
           </div>

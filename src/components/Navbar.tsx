@@ -77,14 +77,14 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
       name: 'Inicio', href: 'inicio', subnav: [
         { name: 'Sobre', href: 'sobre' },
         { name: 'Avaliações', href: 'avaliacoes' },
-        { name: 'Nossos Parceiros', href: 'nossos-parceiros' },
+        { name: 'Nossas Marcas', href: 'nossas-marcas' },
         { name: 'Fale Conosco', href: 'fale-conosco' },
       ],
     },
     { name: 'Cursos', href: '/cursos' },
     { name: 'Fotos', href: '/fotos' },
     { name: 'Nossa Historia', href: '/nossahistoria' },
-    { name: 'Reserve', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
+    { name: 'Reserve', href: 'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva' },
   ]
 
 
@@ -155,7 +155,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                             <ListItem title="Avaliações" qparams={'avaliacoes'} handlePath={handlePath}>
                               Veja as avaliações de nosso clientes.
                             </ListItem>
-                            <ListItem title="Nossos Parceiros" qparams={'nossos-parceiros'} handlePath={handlePath}>
+                            <ListItem title="Nossas Marcas" qparams={'nossas-marcas'} handlePath={handlePath}>
                               Conheça os parceiros Nihon
                             </ListItem>
                             <ListItem title="Fale Conosco" qparams={'fale-conosco'} handlePath={handlePath}>
@@ -201,7 +201,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                         </Link>
                       </NavigationMenuItem>
                       <NavigationMenuItem className=''>
-                        <Link href="https://api.whatsapp.com/send/?phone=55991362855" legacyBehavior passHref>
+                        <Link href="https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva" legacyBehavior passHref>
                           <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
                             Reserve
                           </NavigationMenuLink>

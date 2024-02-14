@@ -4,27 +4,52 @@ import Link from 'next/link'
 import React from 'react'
 import { motion } from "framer-motion"
 
-const ParceirosSection = () => {
+const brands = [
+  {
+    name: 'Finos Paladares Restaurante',
+    link: 'https://www.instagram.com/finos_paladares_restaurante/',
+    imageSrc: '/finospaladares.png',
+  },
+  {
+    name: 'AquidaClass Marketing',
+    link: 'https://www.instagram.com/aquidaclass_marketing/',
+    imageSrc: '/AquidaClassLOG.png',
+  },
+  {
+    name: '400dpi Logo',
+    link: 'https://www.instagram.com/aquidaclass_marketing/',
+    imageSrc: '/400dpiLogo.png',
+  },
+  {
+    name: 'AquidaCred',
+    link: 'https://aquidacred.com.br/',
+    imageSrc: '/aquidaCred.png',
+  },
+  {
+    name: 'Pesqueiro 110',
+    link: 'https://www.pesqueiro110.com.br/',
+    imageSrc: '/pesqueiro-110.png',
+  },
+];
 
+const ParceirosSection = () => {
   return (
-    <section id='nossos-parceiros' className='w-full bg-[#292824] py-20 '>
-      <div className='container px-8'>
-        <h2 className='text-[#b93531] font-semibold text-3xl mb-8'>Nossos Parceiros</h2>
-        <div className='flex items-center justify-center gap-10'>
-          <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} >
-            <Link href={'https://www.instagram.com/finos_paladares_restaurante/'} target='_blank' className=' text-white gap-4 flex sm:gap-20 items-center justify-center space-y-20'>
-              <Image src={'/finospaladares.png'} width={160} height={160} alt='fotopratonihon' className='w-24 md:w-40 rounded-full shadow hover:shadow-md h-auto object-contain hover:scale-95 duration-200' />
+    <section id='nossas-marcas' className='bg-[#292824] py-20'>
+      <div className="sm:container mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className='text-[#b93531] font-semibold  max-sm:text-center text-3xl mb-8'>Conheça nossas Marcas</h2>
+
+        <div className="flex max-md:flex-col items-center gap-x-8 justify-between gap-y-12">
+          {brands.map((brand, index) => (
+            <Link key={index} href={brand.link} target='_blank'>
+              <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
+                <Image src={brand.imageSrc} width={160} height={160} alt={brand.name} className={`h-auto w-40 ${brand.name === 'AquidaClass Marketing' && 'bg-muted-foreground rounded-full p-2'} object-contain`} />
+              </motion.div>
             </Link>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} >
-            <Link href={'https://www.instagram.com/aquidaclass_marketing/'} target='_blank' className=' text-white gap-4 flex sm:gap-20 items-center justify-center space-y-20'>
-              <Image src={'/AquidaClassLOG.png'} width={160} height={160} alt='fotopratonihon' className='bg-white rounded-full shadow hover:shadow-md p-2 w-24 md:w-40 h-auto object-contain hover:scale-95 duration-200' />
-            </Link>
-          </motion.div>
+          ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ParceirosSection
+export default ParceirosSection;
