@@ -20,7 +20,7 @@ const MasonryGrid = ({ fotos }: any) => {
 
         <div className="mt-8 [column-fill:_balance] sm:columns-2 spacce-y sm:gap-6 lg:columns-3 lg:gap-8">
           {fotos.map((foto: FotoPost, index: number) => (
-            <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 , delay: index/10 }} key={index} className='relative rounded-lg shadow transition hover:shadow-lg group sm:break-inside-avoid mb-8'>
+            <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 , delay: index/10 }} key={index} className='relative rounded-lg shadow transition hover:shadow-lg group sm:break-inside-avoid mb-8'>
               <Image
                 className="h-auto max-w-full rounded opacity-75 transition-opacity group-hover:opacity-50"
                 src={urlForImage(foto.foto)} // Substitua 'url' pelo caminho real da imagem
