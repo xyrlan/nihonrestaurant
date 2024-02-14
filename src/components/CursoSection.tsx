@@ -3,11 +3,12 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "framer-motion"
+import MyButton from './MyButton'
 
 
 const CursoSection = () => {
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='CURSOS' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursos.jpg')]">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='Cursos' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursos.jpg')]">
       <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full">
         <h2 className='text-[#b93531] font-semibold text-3xl mb-8'>Conheça nossos cursos e consultorias</h2>
         <div className='space-y-20'>
@@ -25,12 +26,7 @@ const CursoSection = () => {
           </motion.div>
         </div>
         <div className='w-full flex justify-end'>
-          <button
-            className="flex items-center gap-2 group w-full mt-10 rounded duration-200 text-center bg-gray-100 px-5 py-3 font-medium text-[#b93531] hover:bg-gray-400 sm:w-auto"
-          >
-            Quero saber mais
-            <ArrowRight className='transition-all group-hover:translate-x-2' />
-          </button>
+          <MyButton title={'Quero saber mais'} />
         </div>
       </div>
     </motion.section>

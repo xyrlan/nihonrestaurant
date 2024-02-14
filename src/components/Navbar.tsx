@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 import { Disclosure } from '@headlessui/react'
@@ -8,28 +9,74 @@ import { useRouter } from 'next/navigation'
 import Banner from './Banner'
 import { motion } from "framer-motion"
 
+import { cn } from "@/lib/utils"
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = ({ visible, isNavbarAtTop }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedButton, setSelectedButton] = useState("INICIO");
+
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+]
+
+export function NavigationMenuDemo({ visible, isNavbarAtTop }: any) {
+  const [isOpen, setIsOpen] = React.useState(false)
   const router = useRouter()
-  const observer = useRef<IntersectionObserver | null>(null);
-
   const navigation = [
-    { name: 'INICIO', href: '#' },
-    { name: 'SOBRE', href: '#' },
-    { name: 'CURSOS', href: '#' },
+    { name: 'Inicio', href: '#' },
+    { name: 'Sobre', href: '#' },
+    { name: 'Cursos', href: '#' },
+    { name: 'Fale Conosco', href: '#' },
     // { name: 'CARDÁPIOS', href: '/cardapios' },
-    { name: 'ENTRE EM CONTATO', href: '#' },
-    { name: 'RESERVE', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
+    { name: 'Reserve', href: 'https://api.whatsapp.com/send/?phone=55991362855' },
   ]
-
   return (
-
-    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black duration-200 transition-all ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-40'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-40' : 'bg-opacity-100'}`}>
+    <Disclosure as="nav" className={`w-full bg-[#1d1d19] fixed top-0 border-b border-black duration-200 transition-all z-50 ${visible && !isOpen || isOpen ? '-translate-y-0' : '-translate-y-40'} ${isNavbarAtTop && !isOpen ? 'bg-opacity-40 hover:bg-opacity-100' : 'bg-opacity-100'}`}>
       {({ open }) => (
         <motion.div initial={{ opacity: 0, y: -100 }} whileInView={{ opacity: 1, y: 0 }}>
           <Banner />
@@ -55,26 +102,67 @@ const Navbar = ({ visible, isNavbarAtTop }: any) => {
                   <h1 className='fontnihon text-2xl lg:text-5xl'>NIHON</h1>
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <button
-                        key={item.name}
-                        onClick={() => {
-                          document.getElementById(`${item.name}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                          if (item.name === 'RESERVE') {
-                            router.push(item.href)
-                          }
-                        }}
-                        className={classNames(
-                          'text-gray-200 hover:brightness-110 hover:text-white',
-                          'px-3 py-2 font-medium text-lg duration-200'
-                        )}
-
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-                  </div>
+                  <NavigationMenu>
+                    <NavigationMenuList>
+                      <NavigationMenuItem>
+                        <NavigationMenuTrigger className='bg-inherit text-white hover:text-white hover:bg-[#1d1d19]'>Página incial</NavigationMenuTrigger>
+                        <NavigationMenuContent className='bg-[#1d1d19] text-white'>
+                          <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                            <li className="row-span-4">
+                              <NavigationMenuLink asChild>
+                                <button
+                                  className="flex h-full w-full select-none flex-col justify-end items-center rounded-md bg-gradient-to-b from-muted-foreground/50 to-muted-foreground p-6 no-underline outline-none focus:shadow-md"
+                                  onClick={() => {
+                                    document.getElementById(`Inicio`)?.scrollIntoView({ behavior: 'smooth' })
+                                  }}
+                                >
+                                  <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
+                                  <h1 className='fontnihon text-2xl lg:text-5xl mb-2 mt-4 font-medium'>NIHON</h1>
+                                  <p className="text-sm leading-tight text-gray-300">
+                                    Aqui começam tradições. Há 12 anos em Aquidauana, temos orgulhos de fazer parte da vida de tantas familias e suas tradições.
+                                  </p>
+                                </button>
+                              </NavigationMenuLink>
+                            </li>
+                            <ListItem title="Sobre">
+                              Conheça um pouco da historia Nihon.
+                            </ListItem>
+                            <ListItem title="Cursos">
+                              Conheça o curso do no Chef.
+                            </ListItem>
+                            <ListItem title="Nossos Parceiros">
+                              Conheça os parceiros Nihon
+                            </ListItem>
+                            <ListItem title="Fale Conosco">
+                              Envie dúvidas, reclamações, sugestões e outros
+                            </ListItem>
+                          </ul>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                      {/* <NavigationMenuItem>
+                        <NavigationMenuTrigger>Nosso restaurante</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            {components.map((component) => (
+                              <ListItem
+                                key={component.title}
+                                title={component.title}
+                              >
+                                {component.description}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem> */}
+                      <NavigationMenuItem className=''>
+                          <Link href="https://api.whatsapp.com/send/?phone=55991362855" legacyBehavior passHref>
+                            <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
+                              Reserve
+                            </NavigationMenuLink>
+                          </Link>
+                      </NavigationMenuItem>
+                    </NavigationMenuList>
+                  </NavigationMenu>
                 </div>
               </div>
             </div>
@@ -106,7 +194,35 @@ const Navbar = ({ visible, isNavbarAtTop }: any) => {
         </motion.div>
       )}
     </Disclosure>
+
   )
 }
 
-export default Navbar
+const ListItem = React.forwardRef<
+  React.ElementRef<"button">,
+  React.ComponentPropsWithoutRef<"button">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <button
+          ref={ref}
+          onClick={() => {
+            document.getElementById(`${title}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }}
+          className={cn(
+            "block w-full select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </button>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"

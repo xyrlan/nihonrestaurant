@@ -66,7 +66,7 @@ const Footer = () => {
             <ul className="mt-6 space-y-4 text-sm">
               <li>
                 <button onClick={() => {
-                  document.getElementById(`SOBRE`)?.scrollIntoView({ behavior: 'smooth' , block: 'center'})
+                  document.getElementById(`Sobre`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
                 }} className="text-gray-200 transition hover:opacity-75"> Sobre </button>
               </li>
 
@@ -80,8 +80,8 @@ const Footer = () => {
 
               <li>
                 <button onClick={() => {
-                  document.getElementById(`ENTRE EM CONTATO`)?.scrollIntoView({ behavior: 'smooth' , block: 'center'})
-                }}  className="text-gray-200 transition hover:opacity-75"> Fale conosco </button>
+                  document.getElementById(`Fale Conosco`)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                }} className="text-gray-200 transition hover:opacity-75"> Fale conosco </button>
               </li>
 
             </ul>
@@ -127,11 +127,13 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4 text-sm">
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Clique aqui </Link>
+                <Link href={'https://instadelivery.com.br/nihonsushi'} target='_blank' className="text-gray-200 transition hover:opacity-75"> Clique aqui </Link>
               </li>
             </ul>
           </div>
         </div>
+
+        <iframe className='w-full' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3737.6438410048913!2d-55.788799!3d-20.4798165!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x947de646b7af2113%3A0x1b605c7d8eddb972!2sNIHON%20RESTAURANTE!5e0!3m2!1spt-BR!2sbr!4v1707907902379!5m2!1spt-BR!2sbr" width="600" height="300" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
         <p className="text-xs text-gray-500">&copy; 2010. Nihon. Todos os direitos reservados.</p>
         <Link href={'https://xyrlan.vercel.app/'} ><p className='text-xs text-gray-500 mt-4'>Desenvolvido por <span className='text-[#b93531] underline'>xyrlan</span></p></Link>

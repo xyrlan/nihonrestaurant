@@ -1,6 +1,6 @@
 'use client'
 import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
+import { NavigationMenuDemo } from "@/components/Navbar"
 import { Toaster } from "@/components/ui/sonner"
 import { useEffect, useState } from "react";
 
@@ -27,7 +27,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
   return (
     <div>
-      <Navbar visible={visible} isNavbarAtTop={isNavbarAtTop} />
+      <NavigationMenuDemo visible={visible} isNavbarAtTop={isNavbarAtTop} />
       {children}
       <Footer />
       <Toaster />
