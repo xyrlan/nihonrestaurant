@@ -153,7 +153,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link href="/fotos" target='_blank' className="text-gray-200 transition hover:opacity-75"> Feed </Link>
+                <Link href="/fotos" className="text-gray-200 transition hover:opacity-75"> Feed </Link>
               </li>
             </ul>
           </div>

@@ -8,8 +8,8 @@ import MasonryGrid from '@/components/MasonryGrid';
 
 const BlogFotosPage = async () => {
   const fotos = await getFotosVideos(client)
-
   const reversedFotos = fotos.reverse()
+  
   return (
     <MasonryGrid posts={reversedFotos} />
   )
