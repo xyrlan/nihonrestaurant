@@ -1,23 +1,31 @@
 import groq from 'groq'
-import { type SanityClient } from 'next-sanity'
 
-export const fotoVideoPostQuery = groq`
-*[
-  _type in ["fotoPost", "videoPost"]
-]`
+export const fotoPostQuery = groq`
+*[_type == "fotoPost"] | order(_createdAt desc)
+`
+
 export const videoPostQuery = groq`
-*[_type == "videoPost"]`
+*[_type == "videoPost"] | order(_createdAt desc)
+`
 
-export async function getFotosVideos(client: SanityClient): Promise<FotoVideoPost[]> {
-  return await client.fetch(fotoVideoPostQuery)
+export interface FotoPost {
+  foto?: any
+  legenda?: string
+  date?: string
 }
 
+export interface VideoPost {
+  video?: any
+  legenda?: string
+  date?: string
+}
 
 
 export interface FotoVideoPost {
   foto?: any
+  video?: any
   legenda?: string
   date?: string
-  video?: any
   _type?: string
+
 }

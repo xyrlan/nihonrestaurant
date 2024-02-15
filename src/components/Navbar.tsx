@@ -28,40 +28,18 @@ function classNames(...classes: any[]) {
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Fotos",
+    href: "/fotos",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Feed de fotos sempre atualizados do Nihon",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Vídeos",
+    href: "/videos",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Feed de videos sempre atualizados do Nihon",
   },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
+
 ]
 
 export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
@@ -82,7 +60,10 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
       ],
     },
     { name: 'Cursos', href: '/cursos' },
-    { name: 'Feed', href: '/fotos' },
+    { name: 'Feed', href: '/fotos', subnav: [
+      { name: 'Fotos', href: '/fotos' },
+      { name: 'Vídeos', href: '/videos' },
+    ], },
     { name: 'Nossa Historia', href: '/nossahistoria' },
     { name: 'Reserve', href: 'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva' },
   ]
@@ -129,6 +110,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                 <div className="hidden sm:ml-6 sm:block">
                   <NavigationMenu>
                     <NavigationMenuList>
+
                       <NavigationMenuItem>
                         <NavigationMenuTrigger className='bg-inherit text-white hover:text-white hover:bg-[#1d1d19]'>Página incial</NavigationMenuTrigger>
                         <NavigationMenuContent className='bg-[#1d1d19] text-white'>
@@ -164,24 +146,10 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem>
-                      {/* <NavigationMenuItem>
-                        <NavigationMenuTrigger>Nosso restaurante</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                            {components.map((component) => (
-                              <ListItem
-                                key={component.title}
-                                title={component.title}
-                              >
-                                {component.description}
-                              </ListItem>
-                            ))}
-                          </ul>
-                        </NavigationMenuContent>
-                      </NavigationMenuItem> */}
+
                       <NavigationMenuItem className=''>
                         <Link href="/nossahistoria" legacyBehavior passHref>
-                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
+                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50"}>
                             Nossa Historia
                           </NavigationMenuLink>
                         </Link>
@@ -193,13 +161,29 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                           </NavigationMenuLink>
                         </Link>
                       </NavigationMenuItem>
-                      <NavigationMenuItem className=''>
-                        <Link href="/fotos" legacyBehavior passHref>
-                          <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
-                            Feed
-                          </NavigationMenuLink>
-                        </Link>
+
+                      <NavigationMenuItem>
+                        <NavigationMenuTrigger className='bg-inherit text-white hover:text-white hover:bg-[#1d1d19]'>Feed</NavigationMenuTrigger>
+                        <NavigationMenuContent className='bg-[#1d1d19] text-white'>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            {components.map((component) => (
+                              <Link href={component.href} key={component.title} passHref legacyBehavior>
+                                <NavigationMenuLink
+                                  asChild
+                                >
+                                  <button className='block w-full select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground' >
+                                    <div className="text-sm font-medium leading-none">{component.title}</div>
+                                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                      {component.description}
+                                    </p>
+                                  </button>
+                                </NavigationMenuLink>
+                              </Link>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
                       </NavigationMenuItem>
+
                       <NavigationMenuItem className=''>
                         <Link href="https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva" legacyBehavior passHref>
                           <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
@@ -241,7 +225,11 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                           <Disclosure.Button
                             key={subItem.name}
                             onClick={() => {
-                              handlePath(subItem)
+                              if(item.name === 'Inicio') {
+                                handlePath(subItem)
+                              } else {
+                                router.push(subItem.href)
+                              }
                               setIsOpen(false);
                             }}
                             className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-white rounded-md"
@@ -265,10 +253,10 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
 
 const ListItem = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentPropsWithoutRef<"button"> & { title: string; qparams: string, handlePath: any }
+  React.ComponentPropsWithoutRef<"button"> & { title: string; qparams: string | undefined, handlePath: any }
 >(({ className, title, children, qparams, handlePath, ...props }, ref) => {
 
-const item = {name: title, href: qparams}
+  const item = { name: title, href: qparams }
 
   return (
     <li>
@@ -276,7 +264,7 @@ const item = {name: title, href: qparams}
         <button
           ref={ref}
           onClick={() => {
-           handlePath(item)
+            handlePath(item)
           }}
           className={cn(
             "block w-full select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",

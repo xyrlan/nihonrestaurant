@@ -1,17 +1,18 @@
 
 import React from 'react'
-import { client } from '../../../sanity/lib/client';
-import { getFotosVideos } from '../../../sanity/lib/queries';
+import { client, sanityFetch } from '../../../sanity/lib/client';
+import { FotoPost, fotoPostQuery } from '../../../sanity/lib/queries';
 import MasonryGrid from '@/components/MasonryGrid';
 
-
-
 const BlogFotosPage = async () => {
-  const fotos = await getFotosVideos(client)
-  const reversedFotos = fotos.reverse()
-  
+  const fotos: FotoPost[] = await sanityFetch({
+    query: fotoPostQuery,
+    tags: ["fotoPost"],
+  })
+
+
   return (
-    <MasonryGrid posts={reversedFotos} />
+    <MasonryGrid posts={fotos} />
   )
 }
 

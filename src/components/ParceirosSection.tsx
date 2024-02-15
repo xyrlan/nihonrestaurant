@@ -16,8 +16,8 @@ const brands = [
     imageSrc: '/AquidaClassLOG.png',
   },
   {
-    name: '400dpi Logo',
-    link: 'https://www.instagram.com/aquidaclass_marketing/',
+    name: 'saudesystem',
+    link: 'https://www.saudesystem.com.br',
     imageSrc: '/400dpiLogo.png',
   },
   {
@@ -34,7 +34,7 @@ const brands = [
 
 const ParceirosSection = () => {
   return (
-    <section id='nossas-marcas' className='bg-[#292824] py-20'>
+    <section id='nossas-marcas' className='bg-white py-20'>
       <div className="sm:container mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className='text-[#b93531] font-semibold  max-sm:text-center text-3xl mb-8'>Conheça nossas Marcas</h2>
 
@@ -42,7 +42,7 @@ const ParceirosSection = () => {
           {brands.map((brand, index) => (
             <Link key={index} href={brand.link} target='_blank'>
               <motion.div initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-                <Image src={brand.imageSrc} width={160} height={160} alt={brand.name} className={`h-auto w-40 ${brand.name === 'AquidaClass Marketing' && 'bg-muted-foreground rounded-full p-2'} object-contain`} />
+                <Image src={brand.imageSrc} width={160} height={160} alt={brand.name} className={`h-auto w-40 object-contain`} />
               </motion.div>
             </Link>
           ))}
