@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer"
 import { NavigationMenuMain } from "@/components/Navbar"
 import { Toaster } from "@/components/ui/sonner"
+import Providers from "@/lib/providers";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -36,7 +37,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <>
       <NavigationMenuMain visible={visible} isNavbarAtTop={isNavbarAtTop} />
-      {children}
+      <Providers >
+        {children}
+      </Providers>
       <Footer />
       <Toaster />
     </>
