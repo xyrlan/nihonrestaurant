@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const ReviewSection = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} id='avaliacoes' className=" flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursos.jpg')]">
+    <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} id='avaliacoes' className=" flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursoscompressed.webp')]">
       <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full ">
 
 
