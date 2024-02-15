@@ -7,8 +7,8 @@ const josepin = Josefin_Sans({ subsets: ["latin"] })
 
 
 export const metadata: Metadata = {
-  title: "Nihon",
-  description: "Sushi Bar e Restaurante",
+  title: "Nihon Restaurante Japonês",
+  description: " Restaurante e Sushi Bar localizado em Aquidauana MS, Há 30 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
 };
 
 

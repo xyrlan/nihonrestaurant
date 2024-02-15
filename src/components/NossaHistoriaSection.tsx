@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from "framer-motion"
+import MyButton from './MyButton'
 
 
 const NossaHistoriaSection = () => {
@@ -29,7 +30,14 @@ const NossaHistoriaSection = () => {
         <p className='sm:text-lg tracking-wide mb-4 max-w-md'>
           Como novo projeto pessoal, o chef está lançando o Via Burguer uma cozinha de memória afetiva, que inclui suas preferências e autenticidade. Baseado na origem da palavra “NIHON”, que traduzido do japonês significa “Japão”, o chef reúne em um único espaço suas paixões gastronômicas que não se limitam somente à comida, mas a bons drinques, ambiente aconchegante e muito mais. Já pelo empreendedorismo que é outra área de formação pelo Empretec-Sebrae/MS e também Bacharel em Administração pela Faculdade Anhanguera e atualmente cursando Faculdade de Marketing Digital, onde possui empresa própria como o Aquidaclass Marketing Digital, tem pretensão de conquistar novos locais na área da Gastronomia como abrir filiais em cidades litorâneas como Caraguatatuba, Pesqueiro 110 e Projeto Lagoa Comprida.
         </p>
-
+      <div onClick={() => {
+        const element = document.getElementById('mvv');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }} className="mt-8 flex flex-wrap gap-4 text-center">
+        <MyButton title={'Conhecer nossas virtudes'} />
+      </div>
       </motion.div>
     </section >
   )

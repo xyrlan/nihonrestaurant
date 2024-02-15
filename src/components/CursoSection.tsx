@@ -9,10 +9,10 @@ import Link from 'next/link'
 
 const CursoSection = () => {
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} id='cursos' className="flex min-h-screen items-center justify-center p-12 py-44 sm:py-64 px-6 sm:p-24 bg-[#292824]">
-      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 text-gray-100 w-full">
-        <h2 className='text-[#b93531] font-semibold text-3xl sm:text-5xl mb-8'>Conheça nossos cursos e consultorias</h2>
-        <div className='space-y-20'>
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} id='cursos' className="flex min-h-screen items-center justify-center p-12 sm:py-44 px-6 sm:p-24 bg-[#292824]">
+      <div className="mx-auto max-w-screen-xl px-8 sm:px-8 lg:px-12 text-gray-100 w-full">
+        <h2 className='text-[#b93531] font-semibold text-3xl sm:text-5xl mb-8 max-sm:text-center'>Conheça nossos cursos e consultorias</h2>
+        <div className='space-y-20 max-sm:text-center'>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className='flex gap-10 lg:gap-20 items-center max-md:flex-col justify-center'>
             <p
               className='sm:text-lg tracking-wide'>
@@ -26,7 +26,7 @@ const CursoSection = () => {
             <p className='sm:text-lg tracking-wide '>O segredo de um excelente sushi e pratos orientais está nos detalhes, no modo de fazer. Nosso Chef Thiago Arakaki Sato somam imbatíveis 10 anos de experiência no Japão, adquiridos no próprio país e também Know How de mais 10 na profissão de Chef de Gastronomia no Nihon Restaurante, técnica e arte. Com eles, você vai dominar, em casa, todos os segredos e técnica de um excelente Sushichef Profissional.</p>
           </motion.div>
         </div>
-        <div className='w-full flex justify-end'>
+        <div className='w-full flex justify-end max-sm:justify-center mt-10'>
           <Link target='_blank' href={'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20curso%20de%20sushiman'} >
             <MyButton title={'Quero saber mais'} />
           </Link>
