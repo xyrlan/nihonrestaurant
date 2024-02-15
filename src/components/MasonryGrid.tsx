@@ -15,12 +15,13 @@ const MasonryGrid = ({ posts }: { posts: FotoVideoPost[] }) => {
     <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} id='cursos' className="flex min-h-screen justify-center p-12 py-32 sm:py-44 px-6 sm:p-24 bg-[#292824]">
       <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <h2 className="text-center text-4xl font-bold tracking-tight text-white sm:text-5xl mb-8 sm:mb-12">
-          {posts[0]._type === 'videoPost' ? 'Feed de vídeos': 'Feed de fotos' }
+          {posts[0]._type === 'videoPost' ? 'Feed de vídeos' : 'Feed de fotos'}
         </h2>
 
         <div className="mt-8 [column-fill:_balance] sm:columns-2 spacce-y sm:gap-6 lg:columns-3 lg:gap-8">
           {posts.map((post: FotoVideoPost, index: number) => (
-            <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1, delay: index / 10 }} key={index} className='relative rounded-lg shadow transition hover:shadow-lg group sm:break-inside-avoid mb-8'>
+            (post.video || post.foto) &&
+            <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} key={index} className='relative rounded-lg shadow transition hover:shadow-lg group sm:break-inside-avoid mb-8'>
               {post.hasOwnProperty('foto') ? (
                 <Image
                   className="h-auto max-w-full rounded opacity-75 transition-opacity group-hover:opacity-50"
@@ -30,10 +31,12 @@ const MasonryGrid = ({ posts }: { posts: FotoVideoPost[] }) => {
                   height={500}
                 />
               ) : (
+
                 <video controls className="h-auto max-w-full rounded">
                   <source src={urlForVideo(post.video)!} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+
               )}
               <div className={`h-full p-4 sm:p-6 lg:p-8 flex items-end rounded ${post._type === 'videoPost' ? 'bg-gray-100 text-black' : 'absolute bottom-0 text-white'}`}>
                 <div
