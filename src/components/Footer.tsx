@@ -125,7 +125,7 @@ const Footer = () => {
             <ul className="mt-6 space-y-4 text-sm">
 
               <li>
-                <Link href="https://www.instagram.com/aquidaclass_marketing/" target='_blank' className="text-gray-200 transition hover:opacity-75"> AquidaClass </Link>
+                <Link href="https://www.instagram.com/aquidaclass_marketing/" target='_blank' className="text-gray-200 transition hover:opacity-75"> AquidaClass Marketing </Link>
               </li>
 
               <li>
@@ -133,7 +133,13 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link href="#" className="text-gray-200 transition hover:opacity-75"> Via Burger </Link>
+                <Link href="https://www.saudesystem.com.br" className="text-gray-200 transition hover:opacity-75"> Saude System </Link>
+              </li>
+              <li>
+                <Link href="https://aquidacred.com.br" className="text-gray-200 transition hover:opacity-75"> AquidaCred </Link>
+              </li>
+              <li>
+                <Link href="https://www.pesqueiro110.com.br" className="text-gray-200 transition hover:opacity-75"> Pesqueiro 110 </Link>
               </li>
             </ul>
           </div>
@@ -153,7 +159,10 @@ const Footer = () => {
               </li>
 
               <li>
-                <Link href="/fotos" className="text-gray-200 transition hover:opacity-75"> Feed </Link>
+                <Link href="/fotos" className="text-gray-200 transition hover:opacity-75">Fotos</Link>
+              </li>
+              <li>
+                <Link href="/videos" className="text-gray-200 transition hover:opacity-75">Vídeos</Link>
               </li>
             </ul>
           </div>
