@@ -7,7 +7,7 @@ const VideosPage = async () => {
 
   const videos: VideoPost[] = await sanityFetch({
     query: videoPostQuery,
-    tags: ["videoPOst"],
+    tags: ["videoPost"],
   })
 
   return (
