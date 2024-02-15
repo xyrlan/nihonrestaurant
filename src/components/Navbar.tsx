@@ -82,7 +82,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
       ],
     },
     { name: 'Cursos', href: '/cursos' },
-    { name: 'Fotos', href: '/fotos' },
+    { name: 'Feed', href: '/fotos' },
     { name: 'Nossa Historia', href: '/nossahistoria' },
     { name: 'Reserve', href: 'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva' },
   ]
@@ -196,7 +196,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                       <NavigationMenuItem className=''>
                         <Link href="/fotos" legacyBehavior passHref>
                           <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50 "}>
-                            Fotos
+                            Feed
                           </NavigationMenuLink>
                         </Link>
                       </NavigationMenuItem>
