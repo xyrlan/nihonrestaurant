@@ -125,7 +125,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                                   }}
                                 >
                                   <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
-                                  <h1 className='fontnihon text-2xl lg:text-5xl mb-2 mt-4 font-medium'>NIHON</h1>
+                                  <Image src={'/nihonspan.png'} width={400} height={400} alt='logonihon' className='h-12 md:h-20 w-auto ' />
                                   <p className="text-sm leading-tight text-gray-300">
                                     Aqui começam tradições. Há 12 anos em Aquidauana, temos orgulhos de fazer parte da vida de tantas familias e suas tradições.
                                   </p>
