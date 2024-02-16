@@ -3,14 +3,15 @@ import React from 'react'
 import { motion } from "framer-motion"
 import MyButton from './MyButton'
 import Link from 'next/link'
+import Image from 'next/image'
 
 
 const ReviewSection = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} id='avaliacoes' className=" flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/nihoncursoscompressed.webp')]">
-      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full ">
+    <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} id='avaliacoes' className="relative flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 ">
+      <Image src={'/nihoncursoscompressed.webp'} fill alt='fundo' className='w-full h-full absolute object-cover object-top'/>
 
-
+      <div className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824] text-gray-100 w-full z-20">
         <h2 className="text-[#b93531] text-3xl font-bold tracking-tight sm:text-5xl mb-8 max-sm:text-center">
           Leia as opiniões de confiança dos nossos clientes
         </h2>

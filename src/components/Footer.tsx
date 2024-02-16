@@ -29,7 +29,8 @@ const Footer = () => {
               <div>
                 <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
               </div>
-              <h1 className='fontnihon text-2xl lg:text-5xl'>NIHON</h1>
+              <Image src={'/nihonspan.png'} width={400} height={400} alt='logonihon' className='h-12 md:h-20 w-auto' />
+
             </Link>
           </div>
 

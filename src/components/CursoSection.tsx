@@ -26,7 +26,7 @@ const CursoSection = () => {
           </motion.div>
         </div>
         <div className='w-full flex justify-end max-sm:justify-center mt-10'>
-          <Link target='_blank' href={'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20curso%20de%20sushiman'} >
+          <Link target='_blank' href={'https://wa.me/5567993140747/?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20curso%20de%20sushiman'} >
             <MyButton title={'Quero saber mais'} />
           </Link>
         </div>

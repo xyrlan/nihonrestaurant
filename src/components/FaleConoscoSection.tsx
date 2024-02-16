@@ -39,8 +39,12 @@ const FaleConoscoSection = () => {
   }
 
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='fale-conosco' className="flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 max-sm:bg-center bg-cover bg-[url('/faleconoscoherocompressed.webp')]">
-      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824]">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} id='fale-conosco' className="relative flex min-h-screen items-center justify-center p-12 px-6 sm:p-24 ">
+
+      <Image src={'/faleconoscoherocompressed.webp'} fill alt='fundo' className='w-full h-full absolute object-cover object-top' />
+
+
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="z-20 mx-auto max-w-screen-xl px-8 py-16 sm:px-8 lg:px-12 bg-[#292824]">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12 text-gray-100">
             <h2 className='text-[#b93531] font-semibold text-3xl mb-8'>Fale Conosco</h2>
