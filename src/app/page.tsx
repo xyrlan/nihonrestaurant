@@ -26,8 +26,8 @@ export default function Home() {
       <HeroSection />
       <SobreSection />
       <ReviewSection />
-      <ParceirosSection />
       <FaleConoscoSection />
+      <ParceirosSection />
     </main>
   );
 }
