@@ -11,7 +11,7 @@ const josepin = Josefin_Sans({ subsets: ["latin"] })
 
 
 export const metadata: Metadata = {
-  title: "Nihon Restaurante Japonês",
+  title: "Nihon Restaurante Japonês - Aquidauana MS",
   description: " Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
   abstract: "Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
   keywords: "Restaurante, Aquidauana, Comida Japonesa, Sushi, Sashimi, Temaki, Yakisoba, Teppan, Aquidauana, MS, Mato Grosso do Sul, Brasil, Japão, Nihon, Nihon Restaurante, Nihon Aquidauana, Nihon Aquidauana MS, Nihon Aquidauana Mato Grosso do Sul, Nihon Aquidauana Brasil, Nihon Aquidauana Japão, Nihon Aquidauana Restaurante, Nihon Aquidauana Restaurante Japonês, Nihon Aquidauana Restaurante Japonês Aquidauana, Nihon Aquidauana Restaurante Japonês Aquidauana MS, Nihon Aquidauana Restaurante Japonês Aquidauana Mato Grosso do Sul, Nihon Aquidauana Restaurante Japonês Aquidauana Brasil, Nihon Aquidauana Restaurante",
