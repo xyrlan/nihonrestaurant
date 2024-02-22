@@ -64,7 +64,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
       { name: 'Fotos', href: '/fotos' },
       { name: 'Vídeos', href: '/videos' },
     ], },
-    { name: 'Nossa Historia', href: '/nossahistoria' },
+    { name: 'Nossa História', href: '/nossahistoria' },
     { name: 'Reserve', href: 'https://wa.me/55991362855/?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20fazer%20uma%20reserva' },
   ]
 
@@ -102,6 +102,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
               </div>
               <div className="flex flex-1 items-center sm:items-center sm:justify-between">
                 <Link href={'/'} className="flex gap-4 text-white justify-center items-center">
+                  <h1>Nihon Restaurante - </h1>
                   <div>
                     <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
                   </div>
@@ -133,7 +134,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                               </NavigationMenuLink>
                             </li>
                             <ListItem title="Sobre" qparams={'sobre'} handlePath={handlePath}>
-                              Conheça um pouco da historia Nihon.
+                              Conheça um pouco da história Nihon.
                             </ListItem>
                             <ListItem title="Avaliações" qparams={'avaliacoes'} handlePath={handlePath}>
                               Veja as avaliações de nosso clientes.
@@ -151,7 +152,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
                       <NavigationMenuItem className=''>
                         <Link href="/nossahistoria" legacyBehavior passHref>
                           <NavigationMenuLink className={"bg-inherit text-white hover:text-white hover:bg-[#1d1d19] group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent/50 disabled:pointer-events-none disabled:opacity-50"}>
-                            Nossa Historia
+                            Nossa História
                           </NavigationMenuLink>
                         </Link>
                       </NavigationMenuItem>
