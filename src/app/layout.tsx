@@ -31,7 +31,7 @@ export default function RootLayout({
       <Head>
       <link
           rel="canonical"
-          href="https://www.nihonrestaurante.com.br/"
+          href="https://nihonrestaurante.com.br/"
           key="canonical"
         />
       </Head>
