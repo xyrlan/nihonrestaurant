@@ -102,7 +102,7 @@ export function NavigationMenuMain({ visible, isNavbarAtTop }: any) {
               </div>
               <div className="flex flex-1 items-center sm:items-center sm:justify-between">
                 <Link href={'/'} className="flex gap-4 text-white justify-center items-center">
-                  <h1>Nihon Restaurante - </h1>
+                  <h1 className='sr-only'>Nihon Restaurante - Aquidauana MS</h1>
                   <div>
                     <Image src={'/nihonlogo.png'} width={100} height={100} alt='logonihon' className='h-12 md:h-20 w-auto' />
                   </div>
