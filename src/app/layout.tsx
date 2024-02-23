@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     description: "Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
     images: [
       "https://www.nihonrestaurante.com.br/_next/image?url=%2Fnihonlogo.png&w=128&q=75",
-
     ],
+    siteName: "Nihon Restaurante",
   }
 };
 
