@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 const NossaHistoriaHeroSection = () => {
   return (
     <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}
-      className="relative bg-[url('/nihonfachada.jpeg')] bg-cover bg-center bg-no-repeat p-12 py-20 sm:py-44 px-6 sm:p-24 text-white"
+      className="relative bg-[url('/nihon-herocompressed.webp')] bg-cover bg-center bg-no-repeat p-12 py-20 sm:py-44 px-6 sm:p-24 text-white"
     >
       <div
         className="absolute inset-0 bg-black/35 sm:bg-transparent sm:from-black/95 sm:to-black/25 sm:bg-gradient-to-r bg-gradient-to-l"
