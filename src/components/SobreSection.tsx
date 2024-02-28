@@ -29,7 +29,7 @@ const SobreSection = () => {
             </Link>
           </div>
         </div>
-        <Image src={'/nihonprato.jpg'} width={500} height={333} alt='fotopratonihon' className='sm:w-[40%] h-auto object-contain' />
+        <Image src={'/nihonfamilia.jpeg'} width={500} height={333} alt='fotopratonihon' className='sm:w-[40%] h-auto object-contain' />
       </motion.div>
 
     </section>
