@@ -45,7 +45,6 @@ const MasonryGridVideo = ({ posts }: { posts: FotoVideoPost[] }) => {
             <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1 }} key={index} className='relative rounded-lg shadow transition hover:shadow-lg group sm:break-inside-avoid mb-8'>
               <video controls className="h-auto max-w-full rounded w-full">
                 <source src={urlForVideo(post.video)!} type="video/mp4" />
-                <source src={urlForVideo(post.video)!} type="video/quicktime" />
                 Your browser does not support the video tag.
               </video>
               <div className={`h-full p-4 sm:p-6 lg:p-8 flex items-end rounded bg-gray-100 text-black`}>
