@@ -22,7 +22,7 @@ import { Button } from './ui/button';
 const MasonryGridVideo = ({ posts }: { posts: FotoVideoPost[] }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const videosPerPage = 7;
+  const videosPerPage = 6;
 
   // Calcula os índices para fatiar o array de posts
   const indexOfLastVideo = currentPage * videosPerPage;
