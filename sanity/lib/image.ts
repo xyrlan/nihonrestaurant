@@ -26,7 +26,6 @@ export const urlForVideo = (source: { asset?: { _ref?: string } }): string | nul
     console.error("Unexpected _ref format:", source.asset._ref);
     return null;
   }
-
   const videoId = refParts[1];
 
   // Construir e retornar a URL do vídeo com base no ID
