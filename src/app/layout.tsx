@@ -11,23 +11,29 @@ const josepin = Josefin_Sans({ subsets: ["latin"] })
 
 
 export const metadata: Metadata = {
-  title: "Nihon Restaurante Japonês - Aquidauana MS",
+
+  title: {
+    default: "Home - Nihon Restaurante Japonês",
+    template: "%s - Nihon Restaurante Japonês"
+  },
   description: " Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
   abstract: "Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
   keywords: "Restaurante, Aquidauana, Comida Japonesa, Sushi, Sashimi, Temaki, Yakisoba, Teppan, Aquidauana, MS, Mato Grosso do Sul, Brasil, Japão, Nihon, Nihon Restaurante, Nihon Aquidauana, Nihon Aquidauana MS, Nihon Aquidauana Mato Grosso do Sul, Nihon Aquidauana Brasil, Nihon Aquidauana Japão, Nihon Aquidauana Restaurante, Nihon Aquidauana Restaurante Japonês, Nihon Aquidauana Restaurante Japonês Aquidauana, Nihon Aquidauana Restaurante Japonês Aquidauana MS, Nihon Aquidauana Restaurante Japonês Aquidauana Mato Grosso do Sul, Nihon Aquidauana Restaurante Japonês Aquidauana Brasil, Nihon Aquidauana Restaurante",
   category: "Restaurante",
-  creator: "Nihon Restaurante",
+  creator: "Xyrlan",
   alternates: {
     canonical: "https://nihonrestaurante.com.br",
   },
   openGraph: {
     url: "https://nihonrestaurante.com.br",
-    title: "Nihon Restaurante Japonês - Aquidauana MS",
+    title: "Nihon Restaurante Japonês",
     description: "Restaurante e Sushi Bar localizado em Aquidauana MS, Há 12 anos, começamos com um sonho: fornecer comida e atendimento de qualidade em Aquiadauana MS.",
+    siteName: "Nihon Restaurante",
     images: [
       "https://www.nihonrestaurante.com.br/_next/image?url=%2Fnihonlogo.png&w=128&q=75",
     ],
-    siteName: "Nihon Restaurante",
+    locale: "pt_BR",
+    type: 'website',
   }
 };
 
