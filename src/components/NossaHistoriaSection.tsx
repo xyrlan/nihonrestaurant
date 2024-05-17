@@ -16,19 +16,25 @@ const NossaHistoriaSection = () => {
           <span className='text-white text-5xl font-bold tracking-tight sm:text-7xl mb-12 '>Nossa História</span>
         </h2>
         <p className='sm:text-lg tracking-wide mb-4 max-w-md' >
-          Com sua história de vida relacionada à comida japonesa, por tradição familiar, Thiago Sato morou no Japão e criou o renomado restaurante Nihon em Agosto de 2015, onde ficou por 3 anos ao lado do chef Diogo Wakugawa que foi sushichef das pioneiras casas de sushi em Campo Grande/MS.
+        Com sua história de vida relacionada à comida japonesa, por tradição familiar, Thiago Sato morou no Japão e veio para Aquidauana onde casou e criou com sua esposa e sócia Raquel Casanova o renomado restaurante Nihon em Agosto de 2015, onde entre os “dekasseguis” conversavam sobre experiências no “NIHON” que significa Japão, Raquel sempre ouvindo falar essa palavra de Thiago e seus amigos, resolveu batizar o Restaurante com este nome, e ainda registra-la no INPI. Onde o “Nihon” hoje é uma marca registrada trazendo maior credibilidade e exclusividade da marca. E sempre como uma guerreira incansável ao lado de sua mãe Leida Aivi desde o início ajudou a construir e administrar o Nihon. Thiago ficou por 3 anos ao lado do chef Diogo Wakugawa que foi sushichef das pioneiras casas de sushi em Campo Grande/MS trazendo os mais tradicionais e saborosos sushis de todos.
+
+
         </p>
         <p className='sm:text-lg tracking-wide mb-4 max-w-md'>
-          Natural de Campo Grande, frequentou desde pequeno as primeiras casas de gastronomia oriental da cidade e com 10 anos de vivência no Japão e conhecimento gastronômico familiar de sua mãe, a gastrologa descendente de Okinawa Lídia T. Arakaki Sato trouxe pratos da cultura local como o Soba que é o queridinho da casa e o prato mais pedido pela população Aquidauanense e Anastaciana e também o molho de sashimi pantaneiro receita criada pelo seu pai Carlos Sato, que faz muito sucesso no Tradicional Pesqueiro 110 as margens do Rio Aquidauana.
+        Natural de Campo Grande/MS frequentou desde pequeno as primeiras casas de gastronomia oriental da cidade e com 10 anos de vivência no Japão e conhecimento gastronômico familiar de sua mãe, a gastrologa descendente de Okinawa Lídia T. Arakaki Sato trouxe pratos da cultura local como o Soba que é o queridinho da casa e o prato mais pedido pela população Aquidauanense e Anastaciana e também o molho de sashimi pantaneiro receita criada pelo seu pai Carlos Sato, que faz muito sucesso no Tradicional Pesqueiro 110 as margens do Rio Aquidauana.
+
+
         </p>
         <p className='sm:text-lg tracking-wide mb-4 max-w-md'>
-          Ganhou destaque na cidade com o sabor único de seus pratos, onde possui pratos encontrados somente no Japão e em grandes casas da gastronomia oriental e depois abriu marcas voltadas a gastronomia brasileira e adaptado a cultura local como o Finos Paladares e Via Burguer.
+        Ganhou destaque na cidade com o sabor único de seus pratos, onde possui pratos encontrados somente no Japão e em grandes casas da gastronomia oriental e depois abriu marcas voltadas a gastronomia brasileira e adaptado a cultura local como o Finos Paladares e Via Burguer.
+
         </p>
         <p className='sm:text-lg tracking-wide mb-4 max-w-md'>
-          Apaixonado pela profissão, Thiago está cursando o Nível Superior  de Gastronomia pela Faculdade Anhanguera e marcado pela cozinha fusion japonesa contemporânea.
+         
+Apaixonado pela profissão, Thiago está cursando o Nível Superior de Gastronomia pela Faculdade Anhanguera e marcado pela cozinha fusion japonesa contemporânea.
         </p>
         <p className='sm:text-lg tracking-wide mb-4 max-w-md'>
-          Como novo projeto pessoal, o chef está lançando o Via Burguer uma cozinha de memória afetiva, que inclui suas preferências e autenticidade. Baseado na origem da palavra “NIHON”, que traduzido do japonês significa “Japão”, o chef reúne em um único espaço suas paixões gastronômicas que não se limitam somente à comida, mas a bons drinques, ambiente aconchegante e muito mais. Já pelo empreendedorismo que é outra área de formação pelo Empretec-Sebrae/MS e também Bacharel em Administração pela Faculdade Anhanguera e atualmente cursando Faculdade de Marketing Digital, onde possui empresa própria como o Aquidaclass Marketing Digital, tem pretensão de conquistar novos locais na área da Gastronomia como abrir filiais em cidades litorâneas como Caraguatatuba, Pesqueiro 110 e Projeto Lagoa Comprida.
+        Como novo projeto pessoal, o chef está lançando o Via Burguer uma cozinha de memória afetiva, que inclui suas preferências e autenticidade. Baseado na origem da palavra “NIHON”, que traduzido do japonês significa “Japão”, o chef reúne em um único espaço suas paixões gastronômicas que não se limitam somente à comida, mas a bons drinques, ambiente aconchegante e muito mais. Já pelo empreendedorismo que é outra área de formação pelo Empretec-Sebrae/MS e também Bacharel em Administração pela Faculdade Anhanguera e atualmente cursando Faculdade de Marketing Digital, onde possui empresa própria como o Aquidaclass Marketing Digital, tem pretensão de conquistar novos locais na área da Gastronomia como abrir filiais no Pesqueiro 110 e Projeto Lagoa Comprida.
         </p>
       <div onClick={() => {
         const element = document.getElementById('mvv');

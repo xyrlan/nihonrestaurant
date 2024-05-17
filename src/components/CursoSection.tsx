@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const CursoSection = () => {
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} id='cursos' className="flex min-h-screen items-center justify-center p-12 sm:py-44 px-6 sm:p-24 bg-[#292824]">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} id='cursos' className="flex min-h-screen items-center justify-center p-12 sm:py-20 px-6 sm:p-24 bg-[#292824]">
       <div className="mx-auto max-w-screen-xl px-8 sm:px-8 lg:px-12 text-gray-100 w-full">
         <h2 className='text-[#b93531] font-semibold text-3xl sm:text-5xl mb-8 max-sm:text-center'>Conheça nossos cursos e consultorias</h2>
         <div className='space-y-20 max-sm:text-center'>
@@ -27,7 +27,7 @@ const CursoSection = () => {
         </div>
         <div className='w-full flex justify-end max-sm:justify-center mt-10'>
           <Link target='_blank' href={'https://wa.me/5567993140747/?text=Ol%C3%A1%2C%20quero%20saber%20sobre%20o%20curso%20de%20sushiman'} >
-            <MyButton title={'Quero saber mais'} />
+            <MyButton title={'Falar com o chef'} />
           </Link>
         </div>
       </div>
