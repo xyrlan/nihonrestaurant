@@ -46,13 +46,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${josepin.className} bg-[#292824]`}>
-        <Suspense fallback={<div className='h-screen w-full flex items-center justify-center bg-[#292824]'>
-          <Image src={'/nihonspan.png'} width={400} height={400} alt='logonihon' className='h-12 md:h-20 w-auto duration-300 motion-safe:animate-pulse' />
-        </div>} >
+       
           <Providers>
             {children}
           </Providers>
-        </Suspense>
+     
       </body>
     </html>
   );
